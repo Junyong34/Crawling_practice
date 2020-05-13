@@ -1,0 +1,16 @@
+
+=== Setting
+
+==== User & Group
+
+==== Alert
+
+==== Report
+
+==== Sparse Log
+
+==== Metric Meta
+
+==== Dashboard
+
+==== Notifications

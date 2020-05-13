@@ -1,0 +1,38 @@
+|===
+|Path|Type|Description
+
+|`+timestamp+`
+|`+Number+`
+|Timestamp
+
+|`+status+`
+|`+Number+`
+|Http status code
+
+|`+code+`
+|`+String+`
+|Error code
+
+|`+error+`
+|`+String+`
+|Error text
+
+|`+exception+`
+|`+String+`
+|Exception class
+
+
+|`+message+`
+|`+String+`
+|Error message
+
+|`+path+`
+|`+String+`
+|URI
+
+
+|`+trace+`
+|`+String+`
+|Exception trace data (activated with trace=true parameters)
+
+|===

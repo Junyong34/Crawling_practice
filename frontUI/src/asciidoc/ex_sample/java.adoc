@@ -1,0 +1,238 @@
+== Java Package
+
+다음 테이블은 각 패키지들이 어떤 역할을 하는지 정리한 테이블이다.
+
+|===
+| Package | Description
+
+| com.exem.cloud.api.server
+| API Server
+
+| com.exem.cloud.api.server.agent
+| Agent 관련 package
+
+| com.exem.cloud.api.server.global
+| 전역에서 사용
+
+| com.exem.cloud.api.server.global.aspect
+| Aspect 관련
+
+| com.exem.cloud.api.server.global.aspect.alert
+| Alert 관련 aspect
+
+| com.exem.cloud.api.server.global.aspect.alert.annotation
+| aspect를 사용하여 alert을 제어하는데 사용되는 annotation
+
+| com.exem.cloud.api.server.global.common
+| Response, ErrorResponse, ErrorCode등을 관리
+
+| com.exem.cloud.api.server.global.configuration
+| Configuration
+
+| com.exem.cloud.api.server.global.configuration.domain
+| 공통으로 사용되는 domain entity 관련
+
+| com.exem.cloud.api.server.global.configuration.health
+| AbstractHealthIndicator를 상속해서 구현한 Health Check 구현체
+
+| com.exem.cloud.api.server.global.configuration.security
+| Spring Security를 활용한 인증 체계 JWT를 사용
+
+| com.exem.cloud.api.server.global.configuration.swagger
+| 개발 편의를 위한 swagger용 configuration
+
+| com.exem.cloud.api.server.global.configuration.websocket
+| websocket 관련 configuration
+
+| com.exem.cloud.api.server.global.exception
+| Exception Class
+
+| com.exem.cloud.api.server.global.jpa
+| Custom Jpa
+
+| com.exem.cloud.api.server.global.metric
+| micrometer를 사용하여 metric을 만들고 등록
+
+| com.exem.cloud.api.server.global.utils
+| Util성 class
+
+| com.exem.cloud.api.server.global.web
+| 전역으로 web request 관련 처리를 위한
+
+| com.exem.cloud.api.server.kubernetes
+| Kubernetes 관련
+
+| com.exem.cloud.api.server.kubernetes.domain
+| Kubernetes data 처리를 위한 Cassandra domain entity
+
+| com.exem.cloud.api.server.kubernetes.model
+| Kubernetes data를 mapping 하기 위한 model
+
+| com.exem.cloud.api.server.kubernetes.model.kubernetes
+| Kubernetes Object data를 mapping 하기 위한 model package
+
+| com.exem.cloud.api.server.kubernetes.model.summary
+| Kubernetes summary data model
+
+| com.exem.cloud.api.server.kubernetes.model.summary.detail
+| Kubernetes summary data value model
+
+| com.exem.cloud.api.server.kubernetes.model.topology
+| Kubernetes Multi Cluster Topology model
+
+| com.exem.cloud.api.server.kubernetes.predicate
+| Kubernetes data filter를 위한 predicate
+
+| com.exem.cloud.api.server.kubernetes.repository
+| Cassandra data repository
+
+| com.exem.cloud.api.server.kubernetes.service
+| Kubernetes data service
+
+| com.exem.cloud.api.server.scheduler
+| Scheduler
+
+| com.exem.cloud.api.server.web
+| Web Request를 처리
+
+| com.exem.cloud.api.server.web.alert.controller
+| Alert web handler
+
+| com.exem.cloud.api.server.web.alert.predicate
+| Alert 조회를 위한 predicate
+
+| com.exem.cloud.api.server.web.alert.service
+| Alert service
+
+| com.exem.cloud.api.server.web.authresource.controller
+| Auth resource web handler
+
+| com.exem.cloud.api.server.web.authresource.service
+| Auth resource service
+
+| com.exem.cloud.api.server.web.cache
+| Cache web handler
+
+| com.exem.cloud.api.server.web.dashboard.controller
+| Dashboard web handler
+
+| com.exem.cloud.api.server.web.dashboard.service
+| Dashboard service
+
+| com.exem.cloud.api.server.web.document
+| Document web handler
+
+| com.exem.cloud.api.server.web.eventlog.controller
+| Event log web handler
+
+| com.exem.cloud.api.server.web.eventlog.service
+| Event log service
+
+| com.exem.cloud.api.server.web.healthindicator.controller
+| Health indicator web handler
+
+| com.exem.cloud.api.server.web.healthindicator.service
+| Health indicator service
+
+| com.exem.cloud.api.server.web.infomation.controller
+| Kubernetes information web handler
+
+| com.exem.cloud.api.server.web.infomation.service
+| Kubernetes information service
+
+| com.exem.cloud.api.server.web.jobhistory.controller
+| Job History web handler
+
+| com.exem.cloud.api.server.web.jobhistory.service
+| Job history service
+
+| com.exem.cloud.api.server.web.logviewer.controller
+| Log viewer web handler
+
+| com.exem.cloud.api.server.web.logviewer.service
+| Log viewer service
+
+| com.exem.cloud.api.server.web.management.controller
+| Kubernetes management web handler
+
+| com.exem.cloud.api.server.web.management.service
+| Kubernetes management service
+
+| com.exem.cloud.api.server.web.menu.controller
+| Menu web handler
+
+| com.exem.cloud.api.server.web.menu.service
+| Menu service
+
+| com.exem.cloud.api.server.web.metric.controller
+| Metric web handler
+
+| com.exem.cloud.api.server.web.metric.model
+| Metric model
+
+| com.exem.cloud.api.server.web.metric.model.detail
+| Metric detail model
+
+| com.exem.cloud.api.server.web.metric.service
+| Metric service
+
+| com.exem.cloud.api.server.web.metric.service.prometheus
+| Prometheus metric service
+
+| com.exem.cloud.api.server.web.notification.controller
+| Notification web handler
+
+| com.exem.cloud.api.server.web.notification.service
+| Notification service
+
+| com.exem.cloud.api.server.web.report.controller
+| Report web handler
+
+| com.exem.cloud.api.server.web.report.service
+| Report service
+
+| com.exem.cloud.api.server.web.servicerelation.controller
+| Service relation web handler
+
+| com.exem.cloud.api.server.web.servicerelation.service
+| Service relation service
+
+| com.exem.cloud.api.server.web.sparselog.controller
+| Sparse log web handler
+
+| com.exem.cloud.api.server.web.sparselog.service
+| Sparse log service
+
+| com.exem.cloud.api.server.web.trace.adjuster
+| Jaeger trace data 보정
+
+| com.exem.cloud.api.server.web.trace.controller
+| Service trace web handler
+
+| com.exem.cloud.api.server.web.trace.model
+| Service trace model
+
+| com.exem.cloud.api.server.web.trace.service
+| Service trace service
+
+| com.exem.cloud.api.server.web.trace.util
+| Service trace 에서 사용되는 Util
+
+| com.exem.cloud.api.server.web.user.controller
+| User web handler
+
+| com.exem.cloud.api.server.web.user.service
+| User service
+
+| com.exem.cloud.api.server.websocket
+| Websocket을 처리
+
+| com.exem.cloud.api.server.websocket.metric.controller
+| Websocket으로 metric을 처리
+
+| com.exem.cloud.api.server.websocket.metric.dto
+| Websocket metric dto
+
+| com.exem.cloud.api.server.websocket.metric.service
+| Websocket metric service
+|===

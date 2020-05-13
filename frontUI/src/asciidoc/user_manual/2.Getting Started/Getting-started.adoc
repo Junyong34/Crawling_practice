@@ -1,0 +1,47 @@
+
+== Getting Started
+
+=== Supported web browsers
+
+Chrome/Chromium
+
+Safari
+
+Firefox
+
+Not supported Microsoft Edge 
+
+Not supported Internet Explorer
+
+=== Loggin in for the first time
+최초 접속 후 비밀번호 변경? 가이드
+
+=== Top header
+
+=== Left main menu
+
+=== Right Anomaly score
+
+=== Beginners guide
+==== Monitoring
+주요 특장점
+
+Infrastructure, Workloads, Service, Application, Event, Log.. etc
+
+==== Diagnosis               
+주요 특장점
+
+==== Statistics & Analysis  
+주요 특장점
+
+==== Report                   
+사용자 레포트 설정 가이드(Setting => Report 링크)
+주요 특장점
+
+==== Dashboard   
+사용자 대시보드 설정 가이드(Setting => Dashboard 링크)          
+주요 특장점
+
+==== Notification             
+주요 특장점
+

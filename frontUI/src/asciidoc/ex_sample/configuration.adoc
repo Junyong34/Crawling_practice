@@ -1,0 +1,197 @@
+== Configuration
+
+[[application.yaml]]
+=== application properties (yaml)
+
+`application.yaml` 를 통해 설정 정보를 관리하고 있는데 각 설정 정보 및 방법에 대해 정리한다.
+
+[source, yaml]
+----
+spring:
+   profiles: prd # <1>
+   boot:
+     admin:
+       client:
+         enabled: false # <2>
+         url: http://JYP-admin-service:8888
+         username: admin
+         password: eorbahrhkswp
+         instance:
+           name: cloud API Server
+   jpa:
+     hibernate:
+       ddl-auto: validate # <3>
+     properties:
+       hibernate:
+         dialect: org.hibernate.dialect.PostgreSQL95Dialect
+         generate_statistics: true
+   datasource: # <4>
+     url: jdbc:log4jdbc:postgresql://postgres:5432/postgresdb
+     driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+     username: admin
+     password: eorbahrhkswp
+   data:
+     cassandra: # <5>
+       contact-points: cassandra
+       port: 9042
+       username: cassandra
+       password: cassandra
+       keyspace-name: exem
+       read-timeout: 0
+       schema-action: create_if_not_exists
+logging:
+  file: # <6>
+    max-history: 10
+    max-size: 10MB
+  path: ./logs # <7>
+  level:  # <8>
+    root: warn
+    org.springframework.web.servlet.DispatcherServlet: info # servlet
+    org.springframework.web.client: warn # include rest template
+    org.springframework.boot.actuate.endpoint.web.servlet: warn # actuate
+    org.springframework.web.SimpLogging: warn # websocket
+    org.hibernate.SQL: warn # sql
+    org.springframework.jdbc.core: warn # sql
+    org.hibernate.type.descriptor.sql.BasicBinder: warn # query param
+    org.hibernate.tool.hbm2ddl: info # ddl
+    org.hibernate.cache: warn # cache
+    com.exem.cloud.api.server.kubernetes.service: warn
+    com.datastax.driver.core:
+      QueryLogger: # cassandra
+        NORMAL: info
+        SLOW: debug
+        ERROR: error
+    jdbc: # log4jdbc
+      sqlonly: off
+      sqltiming: off
+      audit: off
+      resultset: off
+      resultsettable: off
+      connection: off
+JYP: # <9>
+  # cloud Configuration
+  agent:
+    filePath: /tmp/JYP/ # <10>
+  report:
+    enabled: true # <11>
+  alert:
+    persist: true # <12>
+    notification:
+      channel: true # <13>
+  exporter:
+    enabled: true # <14>
+    kubernetes:
+      enabled: true # <15>
+    service:
+      enabled: true # <16>
+----
+<1> Spring boot profile ENV의 `SPRING_PROFILES_ACTIVE` 또는 command line argument `-Dspring.profiles.active=prd` 등을 활용 하여 활성화 시킬 수 있다.
+
+<2> Spring boot admin server/client 사용시 활성화 한다.
+
+<3> JPA를 사용하고 구현체로 hibernate를 사용중이다. #실수로 설정하게 될경우 table이 drop 된다#. 해당 옵션을 통해 서버 구동시 action을 정한다. `validate` 를 권장하며 수정사항 발생시 `update` 를 통해 반영한다.
+[WARNING]
+다음 링크를 통해 정확한 사용법을 참고하자 +
+https://docs.spring.io/spring-boot/docs/2.1.9.RELEASE/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-hibernate[https://docs.spring.io/spring-boot/docs/2.1.9.RELEASE/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-hibernate]
+
+<4> database connection URL이다. kubernetes 내에서 구동될 경우 loookup이 가능한 service FQDN 등을 사용하면 된다. username 과 password도 입력하자.
+
+<5> cassandra contact point를 입력한다. `schema-action` 에 의해 없는 테이블은 자동 생성된다.
+
+<6> 로그 파일의 최대 갯수, 파일당 용량.
+
+<7> 로그 파일의 경로. (컨테이너 내에서 생성되는 경로라 사실 중요하지 않다)
+
+<8> 로그 레벨 필요시 변경한다.
+
+<9> Spring의 것이 아닌 내부적으로 사용하는 설정값 들이다.
+
+<10> 에이전트 통해서 로그 파일을 다운 받을 경우의 경로.
+
+<11> report 스케줄러의 en/disable. false로 두면 report가 생성되지 않는다.
+
+<12> alert을 web hook 으로 수신 시 영속할지에 대한 설정이다. false로 하면 영속하지 않는다.
+
+<13> 수신된 alert 을 설정된 channel 로 notification 할지에 대한 설정이다. false 로 하면 channel 로 notification 하지 않는다.
+
+<14> exporter 에 대한 설정이고 현재 prometheus exporter 를 사용중이므로 registry interface 에 등록된 metric을 exporting 할지 결정한다.
+
+<15> kubernetes data 로 생성 된 metric data 를 exporting 할지에 대한 설정이다.
+
+<16> jaeger 통해 수집된 데이터로 service metric을 생성하여 exporting 할지에 대한 설정이다.
+
+=== Kubernetes 배포 시 ENV 설정
+
+Kubernetes에 배포시 container 에 ENV 를 설정 할 수 있으며 설정시 system environment로 설정된다.
+
+어플리케이션 구동시 overview 에서 설명한 것 처럼 `application.yaml` > `OS environment variables` > `Java System Properties` 등의 순서를 가지기 때문에
+override 가능하다.
+
+아래 사용법을 보면 name / value 구성이며 name의 값은 해당 key 의 path 값을 depth 기반으로 underscore 로 concat 한 것이다.
+
+[source, yaml]
+----
+env:
+- name: SPRING_PROFILES_ACTIVE
+  value: prd
+- name: JYP_TIMEZONE
+  value: Asia/Seoul
+- name: JYP_REPORT_ENABLED
+  value: "true"
+- name: JYP_ALERT_PERSIST
+  value: "true"
+- name: JYP_ALERT_NOTIFICATION_CHANNEL
+  value: "true"
+- name: JYP_EXPORTER_ENABLED
+  value: "true"
+- name: JYP_EXPORTER_KUBERNETES_ENABLED
+  value: "true"
+- name: JYP_EXPORTER_SERVICE_ENABLED
+  value: "true"
+- name: SPRING_BOOT_ADMIN_CLIENT_INSTANCE_METADATA_TAGS_ENVIRONMENT
+  value: Dev
+- name: SPRING_BOOT_ADMIN_CLIENT_INSTANCE_PREFERIP
+  value: "true"
+- name: SPRING_BOOT_ADMIN_CLIENT_INSTANCE_METADATA_TAGS_NODENAME
+  valueFrom:
+  fieldRef:
+    apiVersion: v1
+    fieldPath: spec.nodeName
+- name: SPRING_BOOT_ADMIN_CLIENT_INSTANCE_METADATA_TAGS_PODNAME
+  valueFrom:
+    fieldRef:
+      apiVersion: v1
+      fieldPath: metadata.name
+- name: SPRING_BOOT_ADMIN_CLIENT_AUTODEREGISTRATION
+  value: "true"
+- name: SPRING_BOOT_ADMIN_CLIENT_ENABLED
+  value: "true"
+----
+
+[NOTE]
+SPRING_BOOT_ADMIN 으로 시작되는 것은 spring admin server/client 를 사용할때만 동작하며 default 설정으로는 해당 기능이 꺼져 있다.
+
+따라서 실질적으로 의미 있게 사용할 수 있는 값은
+
+[source, yaml]
+----
+- name: SPRING_PROFILES_ACTIVE
+  value: prd
+- name: JYP_TIMEZONE
+  value: Asia/Seoul
+- name: JYP_REPORT_ENABLED
+  value: "true"
+- name: JYP_ALERT_PERSIST
+  value: "true"
+- name: JYP_ALERT_NOTIFICATION_CHANNEL
+  value: "true"
+- name: JYP_EXPORTER_ENABLED
+  value: "true"
+- name: JYP_EXPORTER_KUBERNETES_ENABLED
+  value: "true"
+- name: JYP_EXPORTER_SERVICE_ENABLED
+  value: "true"
+----
+정도가 된다고 보면 된다.
+
+해당 값에 대한 설명은 <<application.yaml>>을 참조 하자.

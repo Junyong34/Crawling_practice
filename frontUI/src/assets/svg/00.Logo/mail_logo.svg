@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Email</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11_Setting_User_Selected_5_Group_Selected-Copy" transform="translate(-1224.000000, -837.000000)">
+            <g id="Group" transform="translate(971.890968, 142.000000)">
+                <g id="Email" transform="translate(253.054348, 695.206820)">
+                    <rect id="Rectangle" stroke="#FFFFFF" x="0.5" y="0.5" width="47" height="47" rx="8"></rect>
+                    <path d="M33,15 L15,15 C13.756875,15 12.76125,16.006875 12.76125,17.25 L12.75,30.75 C12.75,31.993125 13.756875,33 15,33 L33,33 C34.243125,33 35.25,31.993125 35.25,30.75 L35.25,17.25 C35.25,16.006875 34.243125,15 33,15 Z M33,19.5 L24,25.125 L15,19.5 L15,17.25 L24,22.875 L33,17.25 L33,19.5 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

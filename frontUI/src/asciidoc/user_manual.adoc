@@ -1,0 +1,25 @@
+= User Manual
+플랫폼 팀
+:revnumber: 1.0.1
+:revdate: 2020. 01. 30
+:revremark: The first incarnation
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+ifdef::backend-pdf[]
+:source-highlighter: rouge
+endif::[]
+:toc: left
+:toclevels: 5
+:stylesdir:
+:sectlinks:
+:sectnums:
+:pagenums:
+:linkcss: false
+:imagesdir: resource/images
+
+//include::user_manual/overview.adoc[]
+// test
+include::user_manual/list.adoc[]
+
+//include::user_manual/manual.adoc[]

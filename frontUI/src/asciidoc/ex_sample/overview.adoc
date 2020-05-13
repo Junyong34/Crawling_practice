@@ -1,0 +1,90 @@
+[[Overview]]
+== Overview
+
+=== Version
+Version: {revnumber}
+
+Version Date: {revdate}
+
+Version Notes: {revremark}
+
+=== API
+cloud(이하 JYP)의 API Server는 Spring Boot로 제작 되었다.
+SwaggerUI와 연동되어 명세 제공 및 try 해볼 수 있다.
+
+[[overview-http-verbs]]
+==== HTTP verbs
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PATCH`
+| Used to update an existing resource, including partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+==== HTTP status codes
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `400 Bad Request`
+| The server could not understand the request due to invalid syntax.
+
+| `401 Unauthorized`
+| Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+
+| `404 Not Found`
+| The requested resource did not exist
+
+| `500 Internal Server Error`
+| A 500 error is never the client’s fault and therefore it is reasonable for the client to retry the exact same request that triggered this response, and hope to get a different response.
+|===
+
+[[overview-response]]
+==== Common Response
+Every response has the following fields:
+
+include::response-fields.adoc[]
+
+[[overview-errors]]
+==== Common Errors
+
+Whenever an error response (status code >= 400) is returned, the body will contain a JSON object
+that describes the problem. The error object has the following structure:
+
+include::response-error-fields.adoc[]
+
+=== Java Package
+기본적인 Package 설명 및 일부 Util성 Class에 대한 설명을 포함한다.
+
+
+=== Configuration
+API서버의 설정은 `application.yaml` 파일을 수정하거나 System Properties 통해 override가 가능하다.
+기본적으로 `application.yaml` > `OS environment variables` > `Java System Properties` 등의 순서를 가진다.
+
+[NOTE]
+https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config[참고 URL]
+
+따라서 빌드 이후 `application.yaml` 파일을 수정 할 수 없는 상황에도 여러가지 방법으로 기존 configuration을 override 가능하다.
+
+Spring의 설정이 아닌 자체적으로 만든 설정은 prefix `JYP` 를 사용한다.
+

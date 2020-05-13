@@ -1,0 +1,71 @@
+extends: default
+font:
+  catalog:
+    NotoSansKorean:
+      normal: NotoSansKorean.ttf
+      bold: NotoSansKorean.ttf
+      italic: NotoSansKorean.ttf
+      bold_italic: NotoSansKorean.ttf
+    D2Coding:
+      normal: D2Coding.ttf
+      bold: D2CodingBold.ttf
+      italic: D2Coding.ttf
+      bold_italic: D2CodingBold.ttf
+    NanumGothic:
+      normal: NanumGothic.ttf
+      bold: NanumGothicBold.ttf
+      italic: NanumGothic.ttf
+      bold_italic: NanumGothicBold.ttf
+    Noto Serif:
+      normal: notoserif-regular-latin.ttf
+      bold: notoserif-bold-latin.ttf
+      italic: notoserif-italic-latin.ttf
+      bold_italic: notoserif-bolditalic-latin.ttf
+    M+ 1mn:
+      normal: mplus1mn-regular-ascii-conums.ttf
+      bold: mplus1mn-bold-ascii.ttf
+      italic: mplus1mn-italic-ascii.ttf
+      bold_italic: mplus1mn-bolditalic-ascii.ttf
+  fallbacks:
+    # NOTE M+ 1p doesn't support all CJK characters, but it at least has some coverage
+    - NotoSansKorean
+#brand:
+#  primary_color: 005498
+page:
+  layout: portrait
+  # 페이지 워터 마크로 활용 가능
+  #  background_image: watermark.png
+  #  background_color: ffffff
+  # multiply inches by 72 to get pt values
+#  margin: [0.5 * 72, 0.67 * 72, 0.67 * 72, 0.67 * 72]
+  size: A4
+base:
+  font_family: NotoSansKorean
+#prose:
+#  margin_top: 0
+#  margin_bottom: $vertical_rhythm
+title_page:
+  align: center
+  # 커버 이미지
+  #  background_image: manual_cover.jpg
+  title:
+  #    top: 30%
+  #font_size: $base_font_size * 3
+#    font_size: 0
+#    font_style: bold
+#    font_color: 111111
+#    line_height: 0.9
+#  logo:
+#    align: center
+#    image: image:flamingo_logo_t_black.png[width=450]
+#    top: 20%
+#prose:
+#  margin_top: 0
+#  margin_bottom: $vertical_rhythm
+code:
+  font_color: 333333
+  font_family: D2Coding
+#  font_size: 10
+#  padding: 8
+#  line_height: 1.25
+#  background_color: f5f5f5

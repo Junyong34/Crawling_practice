@@ -1,0 +1,8 @@
+== 주요 기능
+
+=== 로그인
+ifndef::imagesdir[:imagesdir: ../images]
+
+.로그인 화면
+image::login.png[scaledwidth=100%,로그인 화면]
+

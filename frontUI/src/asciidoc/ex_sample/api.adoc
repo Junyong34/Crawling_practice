@@ -1,0 +1,213 @@
+
+== API Resource
+
+=== Kubernetes Information
+
+==== Cluster 조회
+===== Request
+//include::{snippets}/kubernetes-information-controller-test/cluster/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster/http-request.adoc[]
+
+===== Response
+//include::{snippets}/kubernetes-information-controller-test/cluster/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster/http-response.adoc[]
+
+==== Cluster 목록 조회
+===== Request
+//include::{snippets}/kubernetes-information-controller-test/cluster-list/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-list/http-request.adoc[]
+
+===== Response
+//include::{snippets}/kubernetes-information-controller-test/cluster-list/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-list/http-response.adoc[]
+
+==== Cluster ID 목록 조회
+===== Request
+//include::{snippets}/kubernetes-information-controller-test/cluster-id-list/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-id-list/http-request.adoc[]
+
+===== Response
+//include::{snippets}/kubernetes-information-controller-test/cluster-id-list/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-id-list/http-response.adoc[]
+
+==== Cluster Summary 조회
+===== Request
+//include::{snippets}/kubernetes-information-controller-test/cluster-summary/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-summary/http-request.adoc[]
+
+===== Response
+//include::{snippets}/kubernetes-information-controller-test/cluster-summary/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/kubernetes-information-controller-test/cluster-summary/http-response.adoc[]
+
+==== Controller 조회
+===== Request
+//include::{snippets}/kubernetes-information-controller-test/controllery/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/kubernetes-information-controller-test/controller/http-request.adoc[]
+
+===== Response
+//include::{snippets}/kubernetes-information-controller-test/controller/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/kubernetes-information-controller-test/controller/http-response.adoc[]
+
+=== Kubernetes Management
+
+=== Alert
+
+=== Event
+
+=== Menu
+
+=== Log
+
+=== Health Indicator
+
+=== Report
+
+=== Service
+
+=== Dashboard
+
+=== Metric
+
+=== Auth
+
+=== User
+
+==== 사용자 전체 조회
+===== Request
+//include::{snippets}/user-controller-test/test-get-all-users/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/user-controller-test/test-get-all-users/http-request.adoc[]
+
+===== Response
+//include::{snippets}/user-controller-test/test-get-all-users/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/user-controller-test/test-get-all-users/http-response.adoc[]
+
+==== 사용자 조회
+===== Request
+//include::{snippets}/user-controller-test/test-get-user/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/user-controller-test/test-get-user/http-request.adoc[]
+
+===== Response
+//include::{snippets}/user-controller-test/test-get-user/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/user-controller-test/test-get-user/http-response.adoc[]
+
+==== 사용자 추가
+===== Request
+//include::{snippets}/user-controller-test/test-add-user/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/user-controller-test/test-add-user/http-request.adoc[]
+
+===== Response
+//include::{snippets}/user-controller-test/test-add-user/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/user-controller-test/test-add-user/http-response.adoc[]
+
+==== 사용자 수정
+===== Request
+//include::{snippets}/user-controller-test/test-update-user/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/user-controller-test/test-update-user/http-request.adoc[]
+
+===== Response
+//include::{snippets}/user-controller-test/test-update-user/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/user-controller-test/test-update-user/http-response.adoc[]
+
+
+==== 사용자 삭제
+===== Request
+//include::{snippets}/user-controller-test/test-delete-user/request-parameters.adoc[]
+
+===== Request HTTP Example
+include::{snippets}/user-controller-test/test-delete-user/http-request.adoc[]
+
+===== Response
+//include::{snippets}/user-controller-test/test-delete-user/response-fields.adoc[]
+
+===== Response HTTP Example
+include::{snippets}/user-controller-test/test-delete-user/http-response.adoc[]
+
+=== Cache
+
+=== Metric
+
+==== Node Metric
+
+===== 조회
+
+====== Request
+include::{snippets}/metric-controller-test/test-node-metric/request-parameters.adoc[]
+
+====== Request HTTP Example
+include::{snippets}/metric-controller-test/test-node-metric/http-request.adoc[]
+
+====== Response
+include::{snippets}/metric-controller-test/test-node-metric/response-fields.adoc[]
+
+====== Response HTTP Example
+include::{snippets}/metric-controller-test/test-node-metric/http-response.adoc[]
+
+
+==== Pod Metric
+
+===== 조회
+
+====== Request
+include::{snippets}/metric-controller-test/test-pod-metric/request-parameters.adoc[]
+
+====== Request HTTP Example
+include::{snippets}/metric-controller-test/test-pod-metric/http-request.adoc[]
+
+====== Response
+include::{snippets}/metric-controller-test/test-pod-metric/response-fields.adoc[]
+
+====== Response HTTP Example
+include::{snippets}/metric-controller-test/test-pod-metric/http-response.adoc[]
+
+
+==== Container Metric
+
+===== 조회
+
+====== Request
+include::{snippets}/metric-controller-test/test-container-metric/request-parameters.adoc[]
+
+====== Request HTTP Example
+include::{snippets}/metric-controller-test/test-container-metric/http-request.adoc[]
+
+====== Response
+include::{snippets}/metric-controller-test/test-container-metric/response-fields.adoc[]
+
+====== Response HTTP Example
+include::{snippets}/metric-controller-test/test-container-metric/http-response.adoc[]

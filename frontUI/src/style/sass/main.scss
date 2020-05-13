@@ -1,0 +1,29 @@
+/* Main SCSS */
+/* import element-ui scss
+-------------------------- */
+@import "themes/_theme.scss";
+
+/* init
+-------------------------- */
+@import "init/_typography.scss";
+@import "init/_reset.scss";
+
+/* utils
+-------------------------- */
+@import "utils/_variables.scss";
+@import "utils/_placeholders.scss";
+@import "utils/_functions.scss";
+@import "utils/_mixins.scss";
+
+/* common
+-------------------------- */
+@import "common/_common.scss";
+@import "common/_chart.scss";
+
+/* vendors
+-------------------------- */
+@import "vendors/_custom-element-ui.scss";
+
+/* shame
+-------------------------- */
+@import "_shame.scss";

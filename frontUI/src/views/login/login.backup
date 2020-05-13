@@ -1,0 +1,573 @@
+<style>
+html,
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'Roboto light', sans-serif;
+}
+
+.xai-login-main-container {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 2fr 1fr;
+	position: relative;
+	user-select: none;
+}
+
+.xai-login-main-container-top {
+	grid-row: 1/2;
+	grid-column: 1/4;
+	background-color: #27282e;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.xai-login-main-container-bottom {
+	grid-row: 2/3;
+	grid-column: 1/4;
+	display: flex;
+	align-items: flex-end;
+	background-color: #222328;
+}
+
+.by-exem-img {
+	padding: 0 0 10px 15px;
+}
+
+.xai-login-main-container-center {
+	grid-row: 1/3;
+	grid-column: 2/3;
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	position: relative;
+}
+
+.xai-login-wrapper {
+	grid-row: 2/3;
+	display: grid;
+	grid-template-columns: 5fr 3fr;
+	width: 960px;
+	height: 544.5px;
+	position: relative;
+	background-color: #32353a;
+	z-index: 1;
+}
+
+.xai-login-wrapper-trapezoid {
+	grid-row: 1/2;
+	grid-column: 1/2;
+	border-bottom: 544.5px solid #4d5057;
+	border-right: 70px solid transparent;
+	z-index: 2;
+}
+
+.xai-login-wrapper-trapezoid-shadow {
+	grid-row: 1/2;
+	grid-column: 1/2;
+	border-bottom: 544.5px solid rgba(0, 0, 0, 0.2);
+	border-right: 70px solid transparent;
+	filter: blur(5px);
+	position: absolute;
+	width: 530px;
+	right: -15px;
+	z-index: 1;
+}
+
+.login-flex-container {
+	grid-row: 1/2;
+	grid-column: 1/2;
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 54px;
+	left: 60px;
+	display: flex;
+	flex-direction: column;
+}
+
+.welcome-box {
+	flex: 1 1 32%;
+	color: #ffffff;
+	font-size: 30px;
+	line-height: 1.3;
+}
+
+.login-box {
+	flex: 1 1 68%;
+}
+
+.login-form {
+	display: grid;
+	grid-template-rows: repeat(25, 1fr);
+	grid-template-columns: repeat(25, 1fr);
+	height: 100%;
+}
+
+.txt-username {
+	grid-row: 2/4;
+	grid-column: 2/7;
+	padding: 2px 0 0 5px;
+	color: #ffffff;
+	font-size: 13px;
+	background-color: #4d5057;
+	z-index: 1;
+}
+
+.username-box {
+	grid-row: 3/7;
+	grid-column: 1/24;
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: repeat(23, 1fr);
+	border: 1px solid #9b9b9b;
+	border-radius: 12px;
+}
+
+.username-input-wrapper {
+	grid-row: 2/4;
+	grid-column: 2/23;
+}
+
+.input-username {
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	font-size: 13px;
+	border: none;
+	background-color: transparent;
+}
+
+input[class='input-username']:focus {
+	outline: none;
+}
+
+.txt-password {
+	grid-row: 8/10;
+	grid-column: 2/7;
+	padding: 2px 0 0 5px;
+	color: #ffffff;
+	font-size: 13px;
+	background-color: #4d5057;
+	z-index: 1;
+}
+
+.password-box {
+	grid-row: 9/13;
+	grid-column: 1/24;
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: repeat(23, 1fr);
+	border: 1px solid #9b9b9b;
+	border-radius: 12px;
+}
+
+.password-input-wrapper {
+	grid-row: 2/4;
+	grid-column: 2/20;
+}
+
+.input-password {
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	font-size: 13px;
+	border: none;
+	background-color: transparent;
+}
+
+input[class='input-password']:focus {
+	outline: none;
+}
+
+.password-icon {
+	grid-row: 1/5;
+	grid-column: 21/23;
+	display: flex;
+	align-items: center;
+}
+
+.password-icon > span:hover {
+	cursor: pointer;
+}
+
+.function-container {
+	grid-row: 14/19;
+	grid-column: 1/24;
+	display: flex;
+	flex-direction: column;
+}
+
+.invalidation-message-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 30px;
+	color: #d93025;
+}
+
+.login-checkbox {
+	display: flex;
+}
+
+.txt-rememberMe {
+	padding: 3px 0 0 10px;
+	color: #ffffff;
+	font-size: 13px;
+}
+
+.login-btn-box {
+	grid-row: 19/24;
+	grid-column: 1/24;
+	border: none;
+	border-radius: 7px;
+	background-color: #121219;
+}
+
+.login-btn {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 7px;
+	background-color: #121219;
+}
+
+.login-btn:hover {
+	cursor: pointer;
+}
+
+.txt-login {
+	color: #ffffff;
+	font-size: 13px;
+}
+
+.xai-login-wrapper-right {
+	grid-column: 2/3;
+	position: relative;
+}
+
+.xai-login-wrapper-right > img {
+	position: absolute;
+	width: 482px;
+	right: 0;
+}
+
+.wavelength-wrapper {
+	grid-row: 1/4;
+	grid-column: 1/2;
+	position: absolute;
+}
+
+.wavelength-wrapper > img {
+	position: absolute;
+	top: -105.5px;
+	left: -170px;
+	width: 1300px;
+}
+</style>
+<template>
+	<div
+		class="xai-login-main-container"
+		ref="xaiLoginMainContainer"
+		v-resize="onResize"
+		ondragstart="return false"
+	>
+		<div class="xai-login-main-container-top">
+			<div ref="colorSwitch" class="theme-color-dark"></div>
+		</div>
+		<div class="xai-login-main-container-bottom">
+			<div class="by-exem-img">
+				-->
+			</div>
+		</div>
+		<div class="xai-login-main-container-center">
+			<div class="xai-login-wrapper" ref="xaiLoginWrapper">
+				<div class="xai-login-wrapper-trapezoid">
+					<div class="login-flex-container">
+						<div class="welcome-box">
+							<span>Welcome to</span><br />
+							<span style="font-family: 'Roboto bold', sans-serif; font-weight:bold;">
+								Cloud Monitoring Solution
+							</span>
+						</div>
+						<div class="login-box">
+							<form class="login-form">
+								<div class="txt-username">
+									<span style="font-family: 'Roboto Regular', sans-serif;">
+										USERNAME
+									</span>
+								</div>
+								<div class="username-box" ref="usernameBox">
+									<div class="username-input-wrapper">
+										<input
+											type="text"
+											class="input-username"
+											ref="inputUserName"
+											style="font-family: 'Roboto Regular', sans-serif;"
+											v-on:focus="changeBorderColor('username', 'focus')"
+											v-on:blur="changeBorderColor('username', 'blur')"
+											v-model="username"
+											v-on:keyup="rememberUsername('keyup')"
+										/>
+									</div>
+								</div>
+								<div class="txt-password">
+									<span style="font-family: 'Roboto Regular', sans-serif;">
+										PASSWORD
+									</span>
+								</div>
+								<div class="password-box" ref="passwordBox">
+									<div class="password-input-wrapper">
+										<input
+											type="password"
+											class="input-password"
+											ref="inputPassword"
+											@keyup.enter="handleSubmit"
+											v-on:focus="changeBorderColor('password', 'focus')"
+											v-on:blur="changeBorderColor('password', 'blur')"
+											v-model="password"
+										/>
+									</div>
+									<div class="password-icon">
+										<span @click="viewPasswordCheck"> </span>
+									</div>
+								</div>
+								<div class="function-container">
+									<div class="invalidation-message-wrapper">
+										<span>
+											{{ errorMessage }}
+										</span>
+									</div>
+									<div class="login-checkbox">
+										<div class="username-checkbox-wrapper">
+											<input
+												type="checkbox"
+												id="keepLogin"
+												class="username-check"
+												v-model="checked"
+												style="display: none;"
+												v-on:click="rememberUsername('click')"
+											/>
+											<label for="keepLogin"> </label>
+										</div>
+										<div class="txt-rememberMe">
+											<span
+												style="font-family: 'Roboto Regular', sans-serif;"
+											>
+												Remember Me
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="login-btn-box">
+									<div class="login-btn" @click="handleSubmit">
+										<span
+											class="txt-login"
+											style="font-family: 'Roboto medium', sans-serif;"
+										>
+											Login
+										</span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="xai-login-wrapper-trapezoid-shadow"></div>
+				<div class="xai-login-wrapper-right"></div>
+			</div>
+			<div class="wavelength-wrapper"></div>
+		</div>
+	</div>
+</template>
+<script>
+// eslint-disable
+import { setItem } from '@/common/LocalStorageMemager';
+import menuUtil from '@/components/common/menuUtil';
+
+export default {
+	data() {
+		return {
+			checked: false,
+			viewPasswordFlag: false,
+			username: 'admin',
+			password: '',
+			errorMessage: null,
+			themeColor: 'dark',
+			language: 'en',
+			serviceIns: this.$webCaller.serviceIns,
+		};
+	},
+	computed: {},
+	watch: {},
+	created() {},
+
+	mounted() {
+		const key = this.getCookie('key');
+
+		// 초기에 존재하는 쿠키 불러오기 없다면 username = "admin"로 임시 고정
+		// 배포 시 this.username = key; 를 제외한 if else 구문 삭제
+		if (key === '') {
+			this.username = 'admin';
+		} else {
+			this.username = key;
+		}
+
+		if (this.username !== '') {
+			this.checked = true;
+		}
+		this.$nextTick(() => {
+			// 화면 name이 해당 api 서블릿 key로 사용
+			// this.$webCaller.initServlet("login");
+		});
+	},
+	beforeDestroy() {},
+	destroyed() {},
+	methods: {
+		handleSubmit() {
+			this.$webCaller.initSocket();
+			this.$webCaller.addSubscribe('wsEvent', 2, 'alarm', 'alarmData', 'alarmTopic');
+
+			this.setMenuList();
+			this.setSystemInfo().then(() => {
+				this.$router.push({
+					name: 'overview',
+				});
+			});
+		},
+		setSystemInfo(userId = 1) {
+			const params = { user_id: userId };
+			const path = this.$api.systemApi().systemList;
+
+			this.serviceIns.setApiPath(path);
+			return this.serviceIns.get(params, (status, response) => {
+				const systemList = response.data;
+				const systemId = response.data[0].sys_id;
+
+				this.$store.dispatch('params/setSystemList', systemList);
+				this.$store.dispatch('params/setSystemId', systemId);
+
+				setItem('system_list', systemList);
+				setItem('systemId', systemId);
+
+				this.$api.sysId = systemId;
+			});
+		},
+		setLoginData(response) {
+			const accessTokenDataSet = response.data.token.accessToken;
+
+			const tokenTypeDataSet = response.data.token.tokenType;
+
+			// set vuex
+			this.$store.dispatch('params/setAccessToken', accessTokenDataSet);
+			this.$store.dispatch('params/setTokenType', tokenTypeDataSet);
+			this.$store.dispatch('params/setUserId', response.data.id);
+			// set localStorage
+			setItem('accessToken', accessTokenDataSet);
+			setItem('tokenType', tokenTypeDataSet);
+			setItem('userId', response.data.id);
+		},
+		setMenuList() {
+			const menuList = menuUtil.menuList;
+
+			this.$store.dispatch('menu_list', menuList);
+			setItem('menuList', menuList);
+		},
+		changeBorderColor(type, flag) {
+			// type : 'username' or 'password' or 'environment' , flag : 'focus' or 'blur' or 'error'
+			const target = type === 'username' ? this.$refs.usernameBox : this.$refs.passwordBox;
+
+			switch (flag) {
+				case 'focus':
+					target.style.borderColor = '#24b6b8';
+					break;
+				case 'blur':
+					target.style.borderColor = '#9b9b9b';
+					break;
+				case 'error':
+					target.style.borderColor = '#d93025';
+					break;
+				default:
+					break;
+			}
+		},
+		onResize() {
+			const currentBrowserHeight = window.innerHeight;
+			const xaiLoginWrapper = this.$refs.xaiLoginWrapper;
+			const xaiLoginMainContainer = this.$refs.xaiLoginMainContainer;
+			let moveValue = 0;
+
+			if (currentBrowserHeight / 2 < xaiLoginWrapper.offsetHeight) {
+				moveValue = currentBrowserHeight / 2 - xaiLoginWrapper.offsetHeight;
+				if (currentBrowserHeight < xaiLoginWrapper.offsetHeight) {
+					return;
+				}
+			}
+			xaiLoginMainContainer.style.top = `${moveValue}px`;
+		},
+		viewPasswordCheck() {
+			this.viewPasswordFlag = !this.viewPasswordFlag;
+			const target = this.$refs.inputPassword;
+
+			if (this.viewPasswordFlag === true) {
+				target.setAttribute('type', 'text');
+			} else {
+				target.setAttribute('type', 'password');
+			}
+			// When this method is executed, the border must also be focus-in.
+			target.focus();
+		},
+		rememberUsername(type) {
+			// type : 'click' , 'keyup'
+			// click 시에는 cookie 저장/삭제 선택
+			if (type === 'click') {
+				this.checked = !this.checked;
+			}
+
+			// cookie 생성/삭제
+			if (this.checked === true) {
+				this.setCookie('key', this.username, 7);
+			} else {
+				if (type === 'keyup') return;
+				this.deleteCookie('key');
+			}
+		},
+		setCookie(cookieName, value, expireDays) {
+			const expireDate = new Date();
+
+			expireDate.setDate(expireDate.getDate() + expireDays);
+			const cookieValue =
+				escape(value) +
+				(expireDays === null ? '' : `; expires=${expireDate.toUTCString()}`);
+
+			document.cookie = `${cookieName}=${cookieValue}`;
+		},
+		getCookie(cookieName) {
+			const tmpCookieName = `${cookieName}=`;
+			const cookieData = document.cookie;
+
+			let start = cookieData.indexOf(tmpCookieName);
+			let cookieValue = '';
+
+			if (start !== -1) {
+				start += tmpCookieName.length;
+				let end = cookieData.indexOf(';', start);
+
+				if (end === -1) {
+					end = cookieData.length;
+				}
+				cookieValue = cookieData.substring(start, end);
+			}
+			return unescape(cookieValue);
+		},
+		deleteCookie(cookieName) {
+			const expireDate = new Date();
+
+			expireDate.setDate(expireDate.getDate() - 1);
+			document.cookie = `${cookieName}= ; expires=${expireDate.toUTCString()}`;
+		},
+	},
+};
+</script>

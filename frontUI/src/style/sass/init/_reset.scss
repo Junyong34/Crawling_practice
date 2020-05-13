@@ -1,0 +1,147 @@
+// Reset/Normalize
+html {
+  overflow: hidden;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  //color: #f2f2ff;
+}
+
+svg {
+  padding: 0;
+  margin: 0;
+}
+/* Reset */
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  //min-width: 1280px;
+  //min-height: 600px;
+  margin: 0;
+  li{
+   font-size: 13px;
+  }
+}
+
+/* Links */
+a {
+  word-wrap: break-word;
+  text-decoration: none;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+a:before,
+a:after {
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+/* table scrollbar */
+.v-table__overflow::-webkit-scrollbar {
+  width: 10px;
+}
+
+.v-table__overflow::-webkit-scrollbar-track {
+  background: #888888;
+  border-radius: 15px;
+}
+
+.v-table__overflow::-webkit-scrollbar-thumb {
+  background: #10d6d6;
+  border-radius: 15px;
+}
+
+/* table */
+table.v-table {
+  color: #fff !important;
+}
+
+table.v-table thead tr {
+  height: 40px;
+}
+
+table.v-table tbody td {
+  height: 30px;
+}
+
+table.v-table tbody {
+  background: #3b3e44;
+}
+
+.fixed-header {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fixed-header table {
+  table-layout: auto;
+}
+
+.fixed-header th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.fixed-header .v-table__overflow {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.data-table-column {
+  color: #ABAEB5 !important;
+  background-color: #1C1C26 !important;
+  border-right: 1px solid #50555C !important;
+}
+
+.v-table__overflow .text-xs-center {
+  height: 30px;
+}
+
+/* table aria*/
+.tb-aria-bg-color {
+  background-color: #3f4249;
+}
+
+/* table header*/
+.th-bg-color {
+  background-color: #1c1c26;
+}
+
+/* table row even */
+.tr-even-bg-color {
+  background-color: #1c1c26;
+}
+
+/* table row odd */
+.tr-odd-bg-color {
+  background-color: #32353a;
+}
+
+table.v-table thead td:not(:nth-child(1)), table.v-table tbody td:not(:nth-child(1)),
+table.v-table thead th:not(:nth-child(1)), table.v-table tbody th:not(:nth-child(1)),
+table.v-table thead td:first-child, table.v-table tbody td:first-child,
+table.v-table thead th:first-child, table.v-table tbody th:first-child {
+  padding: 0 10px;
+}

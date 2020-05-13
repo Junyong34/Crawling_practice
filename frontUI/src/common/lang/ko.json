@@ -1,0 +1,32 @@
+{
+  "test": {
+    "sample": "sample",
+    "sample2": "sample{0}",
+    "sample3": "sample{0}{1}",
+    "sample4": "aa%{MSG} world",
+    "sample5": "car | cars",
+    "banana": "no bananas | {n} banana | {n} bananas"
+  },
+  "common": {},
+  "menu": {},
+  "table": {
+    "header": {
+      "no": "No",
+      "name": "{0}Name",
+      "time": "Time",
+      "type": "{0}Type",
+      "value": "Value",
+      "status": "Status",
+      "score": "Score",
+      "description": "Description"
+    },
+    "columns": {}
+  },
+  "AiChart" : {
+    "currentValue": "현재",
+    "predictedValue": "예측값",
+    "normalRange": "정상범위",
+    "predictRange": "예측범위",
+    "anomalyStatus": "이상여부"
+  }
+}

@@ -1,0 +1,43 @@
+// SCSS Mixins
+@mixin themify($property, $key, $subKey, $themes: $themes) {
+  @each $theme, $map in $themes {
+    & .theme--#{$theme},
+    &.theme--#{$theme},
+    .theme--#{$theme} & {
+      $cur-theme: map-get($themes, $theme);
+      $cur-style: map-get($cur-theme, $key);
+      #{$property}: map-get($cur-style, $subKey);
+    }
+  }
+}
+
+@mixin xai-get-style($property, $key, $subKey) {
+  @include themify($property, $key, $subKey);
+}
+
+@mixin general-grid-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid: {
+    template-columns: repeat(1, 1fr);
+    template-rows: repeat(40, 1fr);
+    row-gap: 5px;
+  }
+  padding: 10px;
+}
+
+@mixin flex-align($f:flex, $d: row, $a: stretch, $j: flex-start, $w: nowrap) {
+  display: $f;
+  flex-direction: $d;
+  align-items: $a;
+  justify-content: $j;
+  flex-wrap: $w;
+}
+
+
+@mixin skip-text($w: nowrap, $o: hidden, $t: ellipsis) {
+  white-space: $w;
+  overflow: $o;
+  text-overflow: $t;
+}

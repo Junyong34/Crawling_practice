@@ -1,0 +1,107 @@
+// SCSS Variables
+$themes: (
+        dark: (
+                background: (
+                  // main_layout
+                        header: #000000,
+                        navMenu: #313131,
+                        main: #121212,
+                  // content_layout
+                        containerHeader: #0F0F01,
+                        container: #1c1c1c,
+                        info: #232323,
+                        containerDeep: #1f1f25,
+                        containerDeeep: #000000,
+                        containerHighlight: #303037,
+                        subContainer: #19191e,
+                        search: #121212,
+                        wrap: #09090a,
+                        dashboard: #121212,
+                  // chart_dom_layout
+                        chartFrame: #121216,
+                  // chart_layout (canvas)
+                        chart: #0D0D0F,
+                  // namespace_resource_quota_card
+                        namespaceCard: #2c3037,
+                  // table
+                        tableRowOdd: #1B1B21,
+                        tableRowEven: #16161B,
+                  // filter (calendar, select)
+                        filter: #141419,
+                        filterBorder: #787878,
+                        filterSelected: rgba(62, 129, 246, 0.4),
+                        filterSelectedBorder: #906aff,
+                        filterDropdown: #1C1C26,
+                        popupTabs: #32353a,
+                ),
+          // text
+                color: (
+                        primary: #FFFFFF,
+                        close: #FFFFFF,
+                        secondary: #787878,
+                        highlight: #3e81f6,
+                ),
+                button: (
+                        primary: #7e51ff,
+                        close: #313131,
+                        item: #1B1B21,
+                        highlight: #906aff,
+                ),
+          // user custom
+                user: (
+                        default: #787878,
+                        buttonBg: #FFFFFF,
+                        buttonText: #000000,
+                        buttonInfo: #1B1B20,
+                ),
+                box-shadow: (
+                        container: (0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14)),
+                        info: (0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2)),
+                        dropdown: (0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.2)),
+                ),
+        ),
+        white: (
+                background: (
+                  // main_layout
+                        header: #ffffff,
+                        navMenu: #3F4348,
+                        main: #303037,
+                  // content_layout
+                        containerHeader: #ffffff,
+                        container: #26262C,
+                        search: #26262a,
+                        wrap: #09090a,
+                        dashboard: #19191e,
+                  // chart_dom_layout
+                        chartFrame: #ffffff,
+                  // chart_layout (canvas)
+                        chart: #0D0D0F,
+                  // namespace_resource_quota_card
+                        namespaceCard: #ffffff,
+                  // table
+                        tableRowOdd: #ffffff,
+                        tableRowEven: #26262C,
+                  // filter (calendar, select)
+                        filter: #ffffff,
+                        filterBorder: #787878,
+                        filterSelected: rgba(62, 129, 246, 0.4),
+                        filterSelectedBorder: #3e81f6,
+                        filterDropdown: #1C1C26,
+                        popupTabs: #32353a
+                ),
+                color: (
+
+                ),
+                button: (
+
+                ),
+                user: (
+
+
+                ),
+                box-shadow: (
+                        container: (0 1px 3px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.2)),
+                        dropDown: (0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14)),
+                ),
+        ),
+);

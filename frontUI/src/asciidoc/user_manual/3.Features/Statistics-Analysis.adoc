@@ -1,0 +1,19 @@
+
+
+=== Statistics & Analysis
+
+==== Performance Trend
+
+==== Alert Analysis
+
+==== Alert History
+
+==== Anomaly Score
+
+==== Job History
+
+==== Sparse Log
+
+==== Log Viewer
+
+==== Event Log

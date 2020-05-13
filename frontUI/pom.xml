@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.exem.cloud</groupId>
+    <artifactId>manual-server</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.0.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <!--Spring Boot dependencies-->
+        <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctorj-pdf</artifactId>
+            <version>1.5.0-beta.7</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <snippetsDirectory>${project.build.directory}/generated-snippets</snippetsDirectory>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.8</version>
+                <executions>
+                    <execution>
+                        <id>generate-manual-html</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>src/asciidoc</sourceDirectory>
+                            <backend>html</backend>
+                            <outputDirectory>dist/docs</outputDirectory>
+                            <doctype>book</doctype>
+                            <sourceDocumentName>user_manual.adoc</sourceDocumentName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-manual-pdf</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+
+                        <configuration>
+                            <sourceDirectory>src/asciidoc</sourceDirectory>
+                            <outputDirectory>dist/docs</outputDirectory>
+                            <backend>pdf</backend>
+                            <sourceDocumentName>user_manual.adoc</sourceDocumentName>
+                            <attributes>
+                                <pdf-stylesdir>${basedir}/src/asciidoc/themes</pdf-stylesdir>
+                                <pdf-fontsdir>${basedir}/src/asciidoc/fonts</pdf-fontsdir>
+                                <pdf-style>xai</pdf-style>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.restdocs</groupId>
+                        <artifactId>spring-restdocs-asciidoctor</artifactId>
+                        <version>2.0.3.RELEASE</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-pdf</artifactId>
+                        <version>1.5.0-beta.7</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

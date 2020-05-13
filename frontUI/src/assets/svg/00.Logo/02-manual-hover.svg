@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192px" height="32px" viewBox="0 0 192 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 60 (101010) - https://sketch.com -->
+    <title>97CB5E6E-AC57-43CB-A385-8A18C1341EC5</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04.Btn/01.Profile/03.Menual/02.Hover">
+            <g id="08.Icon/03.Sidemenu/11.Logout/01.Normal" transform="translate(0.000000, -4.000000)">
+                <g>
+                    <g>
+                        <rect id="Rectangle" fill="#198FFF" x="0" y="4" width="192" height="32" rx="16"></rect>
+                        <polygon id="Path" points="52 0 84 0 84 32 52 32"></polygon>
+                        <text id="Manual" font-family="Roboto-Medium, Roboto" font-size="10" font-weight="400" line-spacing="20" fill="#FFFFFF">
+                            <tspan x="79.7097982" y="23">Manual</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+            <g id="08.Icon/03.Sidemenu/10.Profile/04.Manual_White" transform="translate(15.000000, 8.000000)" stroke="#FFFFFF">
+                <rect id="Rectangle" x="2.5" y="0.5" width="11" height="15" rx="2"></rect>
+                <line x1="5.5" y1="4.5" x2="10.5" y2="4.5" id="Line-10" stroke-linecap="square"></line>
+                <line x1="5.5" y1="8" x2="10.5" y2="8" id="Line-10-Copy" stroke-linecap="square"></line>
+                <line x1="5.5" y1="11.5" x2="10.5" y2="11.5" id="Line-10-Copy-2" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>

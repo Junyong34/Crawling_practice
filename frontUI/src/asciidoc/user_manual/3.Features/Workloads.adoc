@@ -1,0 +1,15 @@
+=== Workloads
+
+==== Deployments
+
+==== DaemonSets
+
+==== ReplicaSets
+
+==== StatefulSets
+
+==== Jobs
+
+==== Cron Jobs
+
+==== Pods

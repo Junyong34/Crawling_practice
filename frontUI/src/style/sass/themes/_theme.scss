@@ -1,0 +1,16 @@
+// Theme
+
+/* Element-ui primary color
+-------------------------- */
+$custom-theme-color: #7e51ff;
+$custom-theme-color-close: #313131;
+$--color-primary: $custom-theme-color !default;;
+$--color-close: $custom-theme-color-close !default;;
+
+/* Element-ui mapTopology Font
+-------------------------- */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* import element-ui stylesheet
+-------------------------- */
+@import "~element-ui/packages/theme-chalk/src/index";
