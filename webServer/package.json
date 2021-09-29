@@ -40,7 +40,7 @@
     "express": "^4.17.1",
     "express-query-boolean": "^2.0.0",
     "global": "^4.3.2",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "morgan": "^1.10.0",
     "node-telegram-bot-api": "^0.40.0",
     "serve-favicon": "^2.5.0",
